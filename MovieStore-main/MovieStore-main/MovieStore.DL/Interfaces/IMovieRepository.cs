@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MovieStore.Models.DTO;
+using MovieStoreB.Models.DTO;
 
-
-namespace MovieStore.DL.Interfaces
+namespace MovieStoreB.DL.Interfaces
 {
     public interface IMovieRepository
     {
         List<Movie> GetMovies();
+
+        void AddMovie(Movie movie);
+
+        void DeleteMovie(int id);
+
+        Movie? GetMoviesById(int id);
     }
 }
