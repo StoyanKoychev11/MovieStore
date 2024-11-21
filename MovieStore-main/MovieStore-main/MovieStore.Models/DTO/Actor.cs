@@ -13,4 +13,3 @@ namespace MovieStoreB.Models.DTO
         public string Name { get; set; }
     }
 }
-
