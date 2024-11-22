@@ -2,7 +2,7 @@ using MovieStoreB.Models.DTO;
 
 namespace MovieStoreB.BL.Interfaces
 {
-    public interface IMovieService
+    public interface MovieService
     {
         List<Movie> GetMovies();
         void AddMovie(Movie movie);
