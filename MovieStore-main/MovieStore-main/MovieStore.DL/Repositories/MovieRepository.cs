@@ -1,10 +1,10 @@
-﻿﻿using MovieStoreB.DL.DB;
+﻿using MovieStoreB.DL.DB;
 using MovieStoreB.DL.Interfaces;
 using MovieStoreB.Models.DTO;
 
 namespace MovieStoreB.DL.Repositories
 {
-    internal class MovieRepository : IMovieRepository
+    internal class MovieStaticRepository : IMovieRepository
     {
         public List<Movie> GetMovies()
         {
@@ -35,4 +35,3 @@ namespace MovieStoreB.DL.Repositories
         }
     }
 }
-
