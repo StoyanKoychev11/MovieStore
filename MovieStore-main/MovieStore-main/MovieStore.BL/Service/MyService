@@ -1,8 +1,8 @@
-﻿using MovieStoreB.BL.Interfaces;
-using MovieStoreB.DL.Interfaces;
-using MovieStoreB.Models.DTO;
+﻿using MovieStore.BL.Interfaces;
+using MovieStore.DL.Interfaces;
+using MovieStore.Models.DTO;
 
-namespace MovieStoreB.BL.Services
+namespace MovieStore.BL.Services
 {
     internal class MyService : MovieService
     {
