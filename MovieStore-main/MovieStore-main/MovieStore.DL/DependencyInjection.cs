@@ -1,8 +1,8 @@
 ﻿﻿using Microsoft.Extensions.DependencyInjection;
-using MovieStoreB.DL.Interfaces;
-using MovieStoreB.DL.Repositories;
+using MovieStore.DL.Interfaces;
+using MovieStore.DL.Repositories;
 
-namespace MovieStoreB.DL
+namespace MovieStore.DL
 {
     public static class DependencyInjection
     {
