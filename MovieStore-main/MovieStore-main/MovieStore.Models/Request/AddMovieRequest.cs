@@ -1,4 +1,4 @@
-﻿namespace MovieStoreB.Models.Requests
+﻿namespace MovieStore.Models.Requests
 {
     public class AddMovieRequest
     {
