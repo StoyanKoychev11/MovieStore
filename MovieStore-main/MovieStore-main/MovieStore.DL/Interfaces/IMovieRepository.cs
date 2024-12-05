@@ -1,6 +1,6 @@
-using MovieStoreB.Models.DTO;
+using MovieStore.Models.DTO;
 
-namespace MovieStoreB.DL.Interfaces
+namespace MovieStore.DL.Interfaces
 {
     public interface IMovieRepository
     {
