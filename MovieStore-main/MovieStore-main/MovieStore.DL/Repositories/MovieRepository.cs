@@ -1,8 +1,8 @@
-﻿using MovieStoreB.DL.DB;
-using MovieStoreB.DL.Interfaces;
-using MovieStoreB.Models.DTO;
+﻿using MovieStore.DL.DB;
+using MovieStore.DL.Interfaces;
+using MovieStore.Models.DTO;
 
-namespace MovieStoreB.DL.Repositories
+namespace MovieStore.DL.Repositories
 {
     internal class MovieStaticRepository : IMovieRepository
     {
