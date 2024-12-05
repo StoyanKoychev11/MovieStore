@@ -1,4 +1,4 @@
-﻿namespace MovieStoreB.Models.DTO
+﻿namespace MovieStore.Models.DTO
 {
     public class Actor
     {
