@@ -1,6 +1,6 @@
-﻿using MovieStoreB.Models.DTO;
+﻿using MovieStore.Models.DTO;
 
-namespace MovieStoreB.DL.DB
+namespace MovieStore.DL.DB
 {
     internal static class StaticData
     {
