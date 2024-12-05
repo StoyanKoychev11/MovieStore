@@ -1,6 +1,6 @@
-﻿using MovieStoreB.Models.Responses;
+﻿using MovieStore.Models.Responses;
 
-namespace MovieStoreB.BL.Interfaces
+namespace MovieStore.BL.Interfaces
 {
     public interface IBlMovieService
     {
