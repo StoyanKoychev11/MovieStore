@@ -1,10 +1,10 @@
-﻿using MovieStore.Models.DTO;
+﻿using MovieStoreB.Models.DTO;
 
-namespace MovieStore.Models.Responses
+namespace MovieStoreB.Models.Responses
 {
     public class FullMovieDetails
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         public string Title { get; set; }
 
