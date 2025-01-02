@@ -1,13 +1,20 @@
-﻿namespace MovieStoreB.Models.DTO
+﻿﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MovieStore.Models.DTO
 {
     public class Movie
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
 
-        public string Title { get; set; }
+        public required string Title { get; set; }
 
         public int Year { get; set; }
 
-        public List<string> Actors { get; set; }
+        public List<int> Actors { get; set; }
+
     }
- }
+}
