@@ -1,10 +1,10 @@
 using MapsterMapper;
 using Microsoft.AspNetCore.Mvc;
-using MovieStoreB.BL.Interfaces;
-using MovieStoreB.Models.DTO;
-using MovieStoreB.Models.Requests;
+using MovieStore.BL.Interfaces;
+using MovieStore.Models.DTO;
+using MovieStore.Models.Requests;
 
-namespace MovieStoreB.Controllers
+namespace MovieStore.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -42,9 +42,9 @@ namespace MovieStoreB.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult GetById(int id)
+        public IActionResult GetById(string id)
         {
-            if (id <= 0) return BadRequest();
+            if (!string.IsNullOrEmpty(id)) return BadRequest();
 
             var result =
                 _movieService.GetMoviesById(id);
@@ -64,9 +64,9 @@ namespace MovieStoreB.Controllers
         }
 
         [HttpDelete("Delete")]
-        public IActionResult Delete(int id)
+        public IActionResult Delete(string id)
         {
-            if (id <= 0) return BadRequest($"Wrong id:{id}");
+            if (!string.IsNullOrEmpty(id)) return BadRequest($"Wrong id:{id}");
 
             _movieService.DeleteMovie(id);
 
