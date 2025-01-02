@@ -1,11 +1,15 @@
-﻿namespace MovieStoreB.Models.Requests
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MovieStore.Models.Requests
 {
     public class AddMovieRequest
     {
-        public string Title { get; set; }
+        public required string Title { get; set; }
 
         public int Year { get; set; }
-
-        public List<string> ActorIds { get; set; }
     }
- }
+}
