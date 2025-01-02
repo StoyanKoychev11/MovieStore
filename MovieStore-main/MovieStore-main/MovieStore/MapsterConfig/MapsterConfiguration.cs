@@ -1,8 +1,8 @@
 ﻿using Mapster;
-using MovieStoreB.Models.DTO;
-using MovieStoreB.Models.Requests;
+using MovieStore.Models.DTO;
+using MovieStore.Models.Requests;
 
-namespace MovieStoreB.MapsterConfig
+namespace MovieStore.MapsterConfig
 {
     public class MapsterConfiguration
     {
