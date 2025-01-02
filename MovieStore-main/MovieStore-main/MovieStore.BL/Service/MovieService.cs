@@ -1,8 +1,8 @@
-﻿using MovieStoreB.BL.Interface;
-using MovieStoreB.DL.Interfaces;
-using MovieStoreB.Models.DTO;
+﻿using MovieStore.BL.Interface;
+using MovieStore.DL.Interfaces;
+using MovieStore.Models.DTO;
 
-namespace MovieStoreB.BL.Service
+namespace MovieStore.BL.Service
 {
     internal class MovieService : IMovieService
     {
