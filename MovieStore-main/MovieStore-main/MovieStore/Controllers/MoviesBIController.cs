@@ -1,4 +1,4 @@
-﻿using MapsterMapper;
+using MapsterMapper;
 using Microsoft.AspNetCore.Mvc;
 using MovieStore.BL.Interfaces;
 using MovieStore.Models.DTO;
@@ -10,11 +10,11 @@ namespace MovieStore.Controllers
     [Route("[controller]")]
     public class MoviesBlController : ControllerBase
     {
-        private readonly MovieService _movieService;
+        private readonly IMovieService _movieService;
         private readonly ILogger<MoviesController> _logger;
 
         public MoviesBlController(
-            MovieService movieService,
+            IMovieService movieService,
             ILogger<MoviesController> logger)
         {
             _movieService = movieService;
