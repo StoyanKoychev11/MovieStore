@@ -4,34 +4,26 @@ using MovieStore.Models.DTO;
 
 namespace MovieStore.DL.Repositories
 {
-    //internal class MovieStaticRepository : IMovieRepository
-    //{
-    //    public List<Movie> GetMovies()
-    //    {
-    //        return StaticData.Movies;
-    //    }
+    public class MovieRepository : IMovieRepository
+    {
+        public List<Movie> GetMovies()
+        {
+            return StaticData.Movies;
+        }
+        public void AddMovie(Movie newMovie)
+        {
+            newMovie.Id = StaticData.Movies.Count > 0 ? StaticData.Movies[^1].Id + 1 : 1;
+            StaticData.Movies.Add(newMovie);
+        }
 
-    //    public void AddMovie(Movie movie)
-    //    {
-    //        StaticData.Movies.Add(movie);
-    //    }
-    //    public void DeleteMovie(int id)
-    //    {
-    //        if (id <= 0) return;
-
-    //        var movie = GetMoviesById(id);
-
-    //        if (movie != null)
-    //        {
-    //            StaticData.Movies.Remove(movie);
-    //        }
-    //    }
-    //    public Movie? GetMoviesById(int id)
-    //    {
-    //        if (id <= 0) return null;
-
-    //        return StaticData.Movies
-    //            .FirstOrDefault(x => x.Id == id);
-    //    }
-    //}
+        public void DeleteMovieById(int id)
+        {
+            
+            var movie = StaticData.Movies.FirstOrDefault(m => m.Id == id);
+            if (movie != null)
+            {
+                StaticData.Movies.Remove(movie);
+            }
+        }
+    }
 }
