@@ -1,6 +1,6 @@
 using MovieStoreB.Models.DTO;
 
-namespace MovieStoreB.BL.Interfaces
+namespace MovieStoreB.BL.Interface
 {
     public interface IMovieService
     {
