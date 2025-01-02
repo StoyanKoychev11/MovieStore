@@ -7,3 +7,4 @@ namespace MovieStore.BL.Interfaces
         List<FullMovieDetails> GetAllMovieDetails();
     }
 }
+
