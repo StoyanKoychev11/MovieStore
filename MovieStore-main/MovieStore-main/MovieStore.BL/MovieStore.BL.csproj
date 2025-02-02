@@ -6,8 +6,17 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
- <ItemGroup>
-    <ProjectReference Include="..\MovieStoreB.DL\MovieStoreB.DL.csproj" />
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MovieStore.DL\MovieStoreC.DL.csproj" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<InternalsVisibleTo Include="MovieStore.Tests" />
+		<InternalsVisibleTo Include="DynamicProxyGenAssembly2" />
+	</ItemGroup>
 
 </Project>
