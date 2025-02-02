@@ -1,9 +1,10 @@
 ﻿using FluentValidation;
-using MovieStore.Controllers;
+
+using MovieStore.Models.Responses;
 
 namespace MovieStore.Validators
 {
-    public class TestValidator : AbstractValidator<AddMovieRequest>
+    public class TestValidator : AbstractValidator<MovieFullDetailsResponse>
     {
         public TestValidator()
         {
