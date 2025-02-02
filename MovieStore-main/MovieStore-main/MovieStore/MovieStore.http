@@ -1,6 +1,6 @@
-@MovieStore_HostAddress = http://localhost:5002
+@MovieStoreC_HostAddress = http://localhost:5236
 
-GET {{MovieStore_HostAddress}}/weatherforecast/
+GET {{MovieStoreC_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
