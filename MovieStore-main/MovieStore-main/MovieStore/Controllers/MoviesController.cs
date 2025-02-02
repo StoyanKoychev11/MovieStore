@@ -1,6 +1,6 @@
 using MapsterMapper;
 using Microsoft.AspNetCore.Mvc;
-using MovieStore.BL.Interfaces;
+using MovieStore.BL.Interface;
 using MovieStore.Models.DTO;
 using MovieStore.Models.Requests;
 
