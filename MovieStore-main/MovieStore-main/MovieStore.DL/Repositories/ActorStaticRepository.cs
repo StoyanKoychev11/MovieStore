@@ -5,7 +5,7 @@ using MovieStore.Models.DTO;
 namespace MovieStore.DL.Repositories
 {
     [Obsolete]
-    internal class ActorStaticDataRepository //: IActorRepository
+    internal class ActorStaticRepository //: IActorRepository
     {
         //public List<Actor> GetAll()
         //{
