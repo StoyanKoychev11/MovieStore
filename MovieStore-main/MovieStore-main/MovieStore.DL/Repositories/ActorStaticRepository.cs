@@ -1,25 +1,23 @@
-﻿﻿using MovieStore.DL.DB;
-using MovieStore.DL.Interfaces;
+﻿using MovieStore.DL.Interfaces;
+using MovieStore.DL.StaticData;
 using MovieStore.Models.DTO;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MovieStore.DL.Repositories
 {
-    public class ActorRepository : IActorRepository
+    [Obsolete]
+    internal class ActorStaticDataRepository //: IActorRepository
     {
-        public Actor? GetById(int id)
-        {
-            return StaticData.Actors.FirstOrDefault(actor => actor.Id == id);
-        }
+        //public List<Actor> GetAll()
+        //{
+        //    return StaticDb.Actors;
+        //}
 
-        public List<Actor> GetActors()
-        {
-            return StaticData.Actors;
-        }
+        //public Actor? GetById(string id)
+        //{
+        //    if (string.IsNullOrEmpty(id)) return null;
 
+        //    return StaticDb.Actors
+        //        .FirstOrDefault(x => x.Id == id);
+        //}
     }
 }
