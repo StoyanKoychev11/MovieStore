@@ -1,10 +1,10 @@
 using Microsoft.Extensions.Logging;
-using MovieStoreC.BL.Interfaces;
-using MovieStoreC.DL.Interfaces;
-using MovieStoreC.Models.DTO;
+using MovieStore.BL.Interfaces;
+using MovieStore.DL.Interfaces;
+using MovieStore.Models.DTO;
 using System.Runtime.CompilerServices;
 
-namespace MovieStoreC.BL.Services
+namespace MovieStore.BL.Services
 {
     internal class MovieService : IMovieService
     {
