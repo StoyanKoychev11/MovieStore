@@ -4,12 +4,12 @@ namespace MovieStore.BL.Interface
 {
     public interface IMovieService
     {
-        List<Movie> GetMovies();
+         List<Movie> GetAll();
 
-        void AddMovie(Movie movie);
+        Movie? GetById(string id);
 
-        void DeleteMovie(string id);
+        void Add(Movie movie);
 
-        Movie? GetMoviesById(string id);
+        void AddActorToMovie(string movieId, string actor);
     }
 }
