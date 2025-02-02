@@ -1,9 +1,11 @@
 ﻿using MovieStore.Models.DTO;
 
-namespace MovieStoreB.DL.Interfaces
+namespace MovieStore.DL.Interfaces
 {
     public interface IActorRepository
     {
+        List<Actor> GetAll();
+
         Actor? GetById(string id);
     }
 }
