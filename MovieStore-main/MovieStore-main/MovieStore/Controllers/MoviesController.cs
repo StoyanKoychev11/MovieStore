@@ -10,11 +10,11 @@ namespace MovieStoreC.Controllers
     [Route("[controller]")]
     public class MoviesController : ControllerBase
     {
-        private readonly IMoviesService _movieService;
+        private readonly IMovieService _movieService;
         private readonly IMapper _mapper;
 
         public MoviesController(
-            IMoviesService movieService,
+            IMovieService movieService,
             IMapper mapper)
         {
             _movieService = movieService;
