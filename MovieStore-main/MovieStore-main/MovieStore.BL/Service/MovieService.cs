@@ -1,5 +1,5 @@
 using Microsoft.Extensions.Logging;
-using MovieStore.BL.Interfaces;
+using MovieStore.BL.Interface;
 using MovieStore.DL.Interfaces;
 using MovieStore.Models.DTO;
 using System.Runtime.CompilerServices;
