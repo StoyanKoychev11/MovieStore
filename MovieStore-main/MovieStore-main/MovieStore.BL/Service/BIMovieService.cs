@@ -15,15 +15,15 @@ namespace MovieStore.BL.Service
             _actorRepository = actorRepository;
         }
 
-        public List<FullMovieDetails> GetAllMovieDetails()
+        public List<MovieFullDetailsResponse> GetAllMovieDetails()
         {
-            var result = new List<FullMovieDetails>();
+            var result = new List<MovieFullDetailsResponse>();
 
-            var movies = _movieService.GetMovies();
+            var movies = _movieService.GetAll();
 
             foreach (var movie in movies)
             {
-                var movieDetails = new FullMovieDetails();
+                var movieDetails = new MovieFullDetailsResponse();
                 movieDetails.Title = movie.Title;
                 movieDetails.Year = movie.Year;
                 movieDetails.Id = movie.Id;
