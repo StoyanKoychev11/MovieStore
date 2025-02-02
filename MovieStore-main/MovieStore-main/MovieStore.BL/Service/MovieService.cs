@@ -6,15 +6,15 @@ using System.Runtime.CompilerServices;
 
 namespace MovieStoreC.BL.Services
 {
-    internal class MoviesService : IMoviesService
+    internal class MovieService : IMovieService
     {
         private readonly IMovieRepository _movieRepository;
         private readonly IActorRepository _actorRepository;
-        private readonly ILogger<MoviesService> _logger;
+        private readonly ILogger<MovieService> _logger;
 
-        public MoviesService(
+        public MovieService(
             IMovieRepository movieRepository,
-            ILogger<MoviesService> logger,
+            ILogger<MovieService> logger,
             IActorRepository actorRepository)
         {
             _movieRepository = movieRepository;
