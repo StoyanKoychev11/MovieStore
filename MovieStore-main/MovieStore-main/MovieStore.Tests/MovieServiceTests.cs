@@ -70,12 +70,12 @@ namespace MovieStore.Tests
             _movieRepositoryMock.Setup(x => x.GetById(It.IsAny<string>()))
                 .Returns((string id) => _movies.FirstOrDefault(m => m.Id == id));
 
-            //var logger = Mock.Of<ILogger<MoviesService>>();
-            var loggerMock = new Mock<ILogger<MoviesService>>();
+            //var logger = Mock.Of<ILogger<MovieService>>();
+            var loggerMock = new Mock<ILogger<MovieService>>();
             ILogger<MoviesService> logger = loggerMock.Object;
 
             //Act
-            var movieService = new MoviesService(
+            var movieService = new MovieService(
                 _movieRepositoryMock.Object,
                 logger,
                 _actorRepositoryMock.Object);
@@ -96,12 +96,12 @@ namespace MovieStore.Tests
             _movieRepositoryMock.Setup(x => x.GetById(It.IsAny<string>()))
                 .Returns((string id) => _movies.FirstOrDefault(m => m.Id == id));
 
-            //var logger = Mock.Of<ILogger<MoviesService>>();
-            var loggerMock = new Mock<ILogger<MoviesService>>();
+            //var logger = Mock.Of<ILogger<MovieService>>();
+            var loggerMock = new Mock<ILogger<MovieService>>();
             ILogger<MoviesService> logger = loggerMock.Object;
 
             //Act
-            var movieService = new MoviesService(
+            var movieService = new MovieService(
                 _movieRepositoryMock.Object,
                 logger,
                 _actorRepositoryMock.Object);
@@ -121,12 +121,12 @@ namespace MovieStore.Tests
             _movieRepositoryMock.Setup(x => x.GetById(It.IsAny<string>()))
                 .Returns((string id) => _movies.FirstOrDefault(m => m.Id == id));
 
-            //var logger = Mock.Of<ILogger<MoviesService>>();
-            var loggerMock = new Mock<ILogger<MoviesService>>();
-            ILogger<MoviesService> logger = loggerMock.Object;
+            //var logger = Mock.Of<ILogger<MovieService>>();
+            var loggerMock = new Mock<ILogger<MovieService>>();
+            ILogger<MovieService> logger = loggerMock.Object;
 
             //Act
-            var movieService = new MoviesService(
+            var movieService = new MovieService(
                 _movieRepositoryMock.Object,
                 logger,
                 _actorRepositoryMock.Object);
