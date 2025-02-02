@@ -3,21 +3,16 @@ using MovieStore.Controllers;
 
 namespace MovieStore.Validators
 {
-    public class TestValidator : AbstractValidator<TestRequest>
+    public class TestValidator : AbstractValidator<AddMovieRequest>
     {
         public TestValidator()
         {
-            RuleFor(x => x.MagicNumber)
-                .GreaterThan(0)
-                .LessThan(10);
-            RuleFor(x => x.Text)
-                .NotNull()
-                .NotEmpty()
-                .MinimumLength(3)
-                .MaximumLength(250);
-            RuleFor(x => x.DateTime)
-                .NotNull()
-                .GreaterThan(DateTime.MaxValue);
+             RuleFor(x => x.Title)
+            .NotNull().NotEmpty();
+            RuleFor(x => x.Year)
+            .NotNull()
+           .NotEmpty();
+                
         }
 
     }
