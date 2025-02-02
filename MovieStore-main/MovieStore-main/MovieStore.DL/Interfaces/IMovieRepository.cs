@@ -1,15 +1,15 @@
-using MovieStore.Models.DTO;
+﻿using MovieStore.Models.DTO;
 
 namespace MovieStore.DL.Interfaces
 {
     public interface IMovieRepository
     {
-        List<Movie> GetMovies();
+        List<Movie> GetAll();
 
-        void AddMovie(Movie movie);
+        Movie? GetById(string id);
 
-        void DeleteMovie(string id);
+        void Add(Movie movie);
 
-        Movie? GetMoviesById(string id);
+        void Update(Movie movie);
     }
 }
