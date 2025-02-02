@@ -4,7 +4,7 @@ namespace MovieStore.BL.Interface
 {
     public interface IBlMovieService
     {
-        List<FullMovieDetails> GetAllMovieDetails();
+        List<MovieFullDetailsResponse> GetAllMovieDetails();
     }
 }
 
