@@ -1,17 +1,17 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using MovieStore.BL.Interfaces;
-using MovieStore.BL.Services;
+using MovieStoreC.BL.Interfaces;
+using MovieStoreC.BL.Services;
 
-namespace MovieStore.BL
+namespace MovieStoreC.BL
 {
-    public static class DependencyInjection
+    public static class DependenciesInjection
     {
-        public static IServiceCollection 
-            AddBusinessDependencies(this IServiceCollection services)
+        public static IServiceCollection
+            RegisterServices(this IServiceCollection services)
         {
-            services.AddSingleton<MovieService, MyService>();
-           
-            return services;
+            return services
+                        .AddSingleton<IMovieService, MovieService>()
+                        .AddSingleton<IBIMovieService, BIMovieService>();
         }
     }
 }
