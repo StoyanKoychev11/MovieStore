@@ -1,50 +1,93 @@
-﻿using MovieStore.BL.Interface;
-using MovieStore.DL.Interfaces;
-using MovieStore.Models.DTO;
+using Microsoft.Extensions.Logging;
+using MovieStoreC.BL.Interfaces;
+using MovieStoreC.DL.Interfaces;
+using MovieStoreC.Models.DTO;
+using System.Runtime.CompilerServices;
 
-namespace MovieStore.BL.Service
+namespace MovieStoreC.BL.Services
 {
-    internal class MovieService : IMovieService
+    internal class MoviesService : IMoviesService
     {
         private readonly IMovieRepository _movieRepository;
+        private readonly IActorRepository _actorRepository;
+        private readonly ILogger<MoviesService> _logger;
 
-        public MovieService(IMovieRepository movieRepository)
+        public MoviesService(
+            IMovieRepository movieRepository,
+            ILogger<MoviesService> logger,
+            IActorRepository actorRepository)
         {
             _movieRepository = movieRepository;
+            _logger = logger;
+            _actorRepository = actorRepository;
         }
 
-        public List<Movie> GetMovies()
+        public void Add(Movie movie)
         {
-            return _movieRepository.GetMovies();
-        }
-
-        public void AddMovie(Movie movie)
-        {
-            if (movie == null || movie.Actors == null) return;
-
-            foreach (var actor in movie.Actors)
+            if (movie == null)
             {
-                if (!Guid.TryParse(actor, out _)) return;
+                _logger.LogError("Movie is null");
+                return;
             }
 
-            _movieRepository.AddMovie(movie);
+            movie.Id = Guid.NewGuid().ToString();
+
+            _movieRepository.Add(movie);
+
         }
 
-        public void DeleteMovie(string id)
+        public void AddActorToMovie(string movieId, string actorId)
         {
-            if (!string.IsNullOrEmpty(id)) return;
-
-            _movieRepository.DeleteMovie(id);
-        }
-
-        public Movie? GetMoviesById(string id)
-        {
-            if (!string.IsNullOrEmpty(id))
+            if (string.IsNullOrEmpty(movieId) || string.IsNullOrEmpty(actorId))
             {
-                return null;
+                _logger.LogError("MovieId or Actor is null");
+                return;
             }
 
-            return _movieRepository.GetMoviesById(id);
+            if (Guid.TryParse(movieId, out _) || Guid.TryParse(actorId, out _))
+            {
+                _logger.LogError("MovieId or Actor is not valid");
+                return;
+            }
+
+            var movie = _movieRepository.GetById(movieId);
+
+            if (movie == null)
+            {
+                _logger.LogError("Movie not found");
+                return;
+            }
+
+            var actor = _actorRepository.GetById(actorId);
+
+            if (actor == null)
+            {
+                _logger.LogError("Actor not found");
+                return;
+            }
+
+            if (movie.Actors == null)
+            {
+                movie.Actors = new List<string>();
+            }
+
+            movie.Actors.Add(actorId);
+
+            _movieRepository.Update(movie);
         }
+
+        public List<Movie> GetAll()
+        {
+            return _movieRepository.GetAll();
+        }
+
+        public Movie? GetById(string id)
+        {
+            if (string.IsNullOrEmpty(id) || !Guid.TryParse(id, out _)) return null;
+
+            return _movieRepository.GetById(id);
+        }
+
+
     }
 }
