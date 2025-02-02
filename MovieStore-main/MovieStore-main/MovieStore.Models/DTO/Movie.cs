@@ -1,20 +1,13 @@
-﻿﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MovieStore.Models.DTO
+﻿namespace MovieStore.Models.DTO
 {
     public class Movie
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
 
-        public required string Title { get; set; }
+        public string Title { get; set; } = string.Empty;
 
         public int Year { get; set; }
 
-        public List<int> Actors { get; set; }
-
+        public List<string> Actors { get; set; }
     }
 }
