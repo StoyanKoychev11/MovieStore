@@ -21,9 +21,9 @@ namespace MovieStore
                     .GetSection(nameof(MongoDbConfiguration)));
 
             // Add services to the container.
-            builder.Services
-                .RegisterRepositories()
-                .RegisterServices();
+             builder.Services
+            .RegisterDataLayer()
+            .RegisterBusinessLayer();
 
             builder.Services.AddMapster();
 
