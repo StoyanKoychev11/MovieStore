@@ -72,7 +72,7 @@ namespace MovieStore.Tests
 
             //var logger = Mock.Of<ILogger<MovieService>>();
             var loggerMock = new Mock<ILogger<MovieService>>();
-            ILogger<MoviesService> logger = loggerMock.Object;
+            ILogger<MovieService> logger = loggerMock.Object;
 
             //Act
             var movieService = new MovieService(
@@ -98,7 +98,7 @@ namespace MovieStore.Tests
 
             //var logger = Mock.Of<ILogger<MovieService>>();
             var loggerMock = new Mock<ILogger<MovieService>>();
-            ILogger<MoviesService> logger = loggerMock.Object;
+            ILogger<MovieService> logger = loggerMock.Object;
 
             //Act
             var movieService = new MovieService(
